@@ -1,0 +1,19 @@
+h2 {
+  text-align: center;
+  padding: 50px;
+  background: black;
+  color: white;
+  margin: 0px;
+}
+
+.panel-group {
+  margin: 20px 50px;
+}
+
+.panel-default {
+  border-color: #2602ad;
+}
+.panel-default>.panel-heading{
+  color: #333;
+  background-color: #a5c0d9;
+}

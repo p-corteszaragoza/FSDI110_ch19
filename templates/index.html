@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- THIS LINE -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <title>Index</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+    <h2>Application Programming Interface (API)</h2>
+
+    <div class="panel-group" id="api-catalog">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#api-catalog" href="#api-catalog-content">
+                        /api/catalog
+                    </a>
+                </h4>
+            </div>
+            <div id="api-catalog-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    This method return the list of products as a json array.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group" id="api-category">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#api-category" href="#api-category-content">
+                        /api/catalog/&ltcategory&gt;
+                    </a>
+                </h4>
+            </div>
+            <div id="api-category-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    This method find the products that belong to category and return the products as a json.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group" id="api-id">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#api-id" href="#api-id-content">
+                        /api/catalog/id/&ltid&gt
+                    </a>
+                </h4>
+            </div>
+            <div id="api-id-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    This method return the product with the specific id.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group" id="api-cheapest">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#api-cheapest" href="#api-cheapest-content">
+                        /api/catalog/cheapest
+                    </a>
+                </h4>
+            </div>
+            <div id="api-cheapest-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    This method get the cheapest product and return it as a json.
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="panel-group" id="api-categories">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#api-categories" href="#api-categories-content">
+                        /api/categories
+                    </a>
+                </h4>
+            </div>
+            <div id="api-categories-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    This method give a list of unique categories as a json array of strings.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group" id="api-test">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#api-test" href="#api-test-content">
+                        /api/test
+                    </a>
+                </h4>
+            </div>
+            <div id="api-test-content" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    This method add and remove products, get the length of the array of products, print the list and
+                    some elements.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
