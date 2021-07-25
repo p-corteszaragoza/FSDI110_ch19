@@ -1,0 +1,51 @@
+wsl  // ubuntu
+
+move to home:
+cd ~
+
+create a folder:
+mkdir flask_api
+
+move into the new folder:
+cd flask_api
+
+
+
+sudo apt install python3
+
+sudo apt install python3-venv
+
+sudo apt install python3-pip
+
+
+
+# create the virtual env
+python3 -m venv venv
+
+# activate the virtual env
+source venv/bin/activate
+
+# install flask and requests
+pip install flask
+pip install requests
+
+# create code
+# run server
+python3 server.py
+
+
+
+# deactivate the virtual env
+deactivate
+
+
+
+#check status/ start mongoDB service
+sudo service mongodb status 
+sudo service mongodb start
+
+#MongoDB Shell
+show dbs
+use <dbName>
+show collections
+db.<collection>.find({})
