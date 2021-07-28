@@ -69,6 +69,17 @@ def get_product_by_category(category):
 
     return parse_json(results)
 
+# enpoint db.couponCodes.insert({"code": "qwerty", "discount": 10})
+
+
+@app.route("/api/discountCode/<code>")
+def validate_discount(code):
+    data = db.couponCodes.find({"code": code})  # cursor
+   # results = [code for code in data]
+    for code in data:
+        return parse_json(code)
+    return parse_json({"error": True, "reason": "Invalid Code"})
+
 
 @app.route("/api/catalog/id/<id>")
 def get_product_by_id(id):
@@ -135,6 +146,16 @@ def test2():
         print(products)
     return "Check your terminal"
 
+
+@app.route("/test/populatecodes")
+def test_populate_codes():
+    db.couponCodes.insert({"code": "qwerty", "discount": 10})
+    db.couponCodes.insert({"code": "abcde0", "discount": 15})
+    db.couponCodes.insert({"code": "123", "discount": 20})
+    db.couponCodes.insert({"code": "asdsadsa", "discount": 50})
+    db.couponCodes.insert({"code": "adzxsda", "discount": 8})
+
+    return "Codes registered"
 
 # if __name__ == '__main__':
 #    app.run(debug=True)
