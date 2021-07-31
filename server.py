@@ -1,3 +1,4 @@
+from logging import disable
 from flask import Flask, abort, request, render_template
 from data import data
 import json
@@ -60,6 +61,35 @@ def save_product():
     return parse_json(prod)
     # products.append(prod)
     # return json.dumps(prod)
+
+
+@app.route("/api/order", methods=['POST'])
+def save_order():
+    order = request.get_json()
+
+    # calculate the total
+    total = 0.0
+    print(order["product"])
+    for prod in order["product"]:
+        #qnty = prod["quantity"]
+        quantity = prod["quantity"]
+        price = prod["price"]
+        total += (quantity * price)
+
+    # calculate the total
+    # verify if there is a couponCode on the order, if so
+    code = order["couponCode"]
+    if(len(code) > 0):
+        cursor = db.couponCodes.find({"code": code})
+        for coupon in cursor:
+            discount = total * (coupon["discount"] / 100)
+            total = total - discount
+
+    order["total"] = total
+    # verify the coupong and get the discount %
+    # apply the discount to the order
+    db.orders.insert(order)
+    return parse_json(order)
 
 
 @app.route("/api/catalog/<category>")
